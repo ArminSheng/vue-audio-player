@@ -219,7 +219,7 @@
       },
 
       onended () {
-        this.$emit('onended')
+        this.$emit('ended')
       },
 
       onwaiting () {
@@ -247,6 +247,7 @@
         this.loading = false
         this.showMask = false
         this.endTime = UTILS.convertSeconds(this.instance.duration)
+        this.$emit('canplay')
       },
 
       ontimeupdate () {
@@ -392,5 +393,49 @@
 
   .audio-player-img {
     width: 100%;
+  }
+
+  /* Flex */
+  [flex~="cross:center"] {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+  }
+
+  [flex~="main:center"] {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  [flex~="dir:top"] {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  [flex] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  [flex], [flex]>*, [flex]>[flex] {
+    overflow: hidden;
+  }
+
+  [flex-box="1"] {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+  }
+
+  [flex]>* {
+      display: block;
   }
 </style>
