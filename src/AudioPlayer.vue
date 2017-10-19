@@ -95,8 +95,8 @@
         type: Object,
         default () {
           return {
-            url: '1',
-            pic: '2s'
+            url: '',
+            pic: ''
           }
         }
       }
