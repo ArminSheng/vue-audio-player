@@ -291,8 +291,8 @@
       destroyInstance () {
         this.pause()
         this.instance.onprogress = ''
-        delete this.instance
         this.instance = ''
+        delete this.instance
       }
     }
   }
